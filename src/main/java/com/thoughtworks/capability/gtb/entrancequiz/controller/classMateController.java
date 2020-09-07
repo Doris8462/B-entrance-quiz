@@ -1,9 +1,12 @@
 package com.thoughtworks.capability.gtb.entrancequiz.controller;
 
 import com.thoughtworks.capability.gtb.entrancequiz.domain.ClassMate;
+import com.thoughtworks.capability.gtb.entrancequiz.service.AddClassMate;
 import com.thoughtworks.capability.gtb.entrancequiz.service.GetClassMate;
 import com.thoughtworks.capability.gtb.entrancequiz.service.Group;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -19,5 +22,9 @@ public class classMateController {
     @GetMapping("/classMate/group")
     public Map<Integer, List<ClassMate>> getClassMateGroup() {
         return Group.group();
+    }
+    @PostMapping("/classMate/add")
+    public List<ClassMate> addClassMate(@PathVariable("name") String name) {
+        return AddClassMate.addClassMate(name);
     }
 }
