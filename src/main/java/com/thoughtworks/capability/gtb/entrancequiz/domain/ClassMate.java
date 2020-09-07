@@ -1,4 +1,4 @@
-package com.thoughtworks.capability.gtb.entrancequiz;
+package com.thoughtworks.capability.gtb.entrancequiz.domain;
 
 public class ClassMate {
     private String id;
